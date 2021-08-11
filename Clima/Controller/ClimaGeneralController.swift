@@ -7,18 +7,18 @@
 
 import UIKit
 
-class ClimaGeneralController: UIViewController, UITextFieldDelegate {
+class ClimaGeneralController:  ClimaBrain, UITextFieldDelegate {
     
-    var newWeatherManager = ClimaBrain()
+    var climaBrain = ClimaBrain()
     @IBOutlet weak var citySearch: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-    var goTwice = 0  
+    var goTwice = 0
+    
     @IBAction func searchInitiated(_ sender: UIButton) {
         citySearch.endEditing(true)
-        print("Search initiated for \(citySearch.text ?? "empty yet")")
- 
+        
         
         
         
@@ -31,7 +31,7 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
         }
         else{
             citySearch.placeholder = "Type something"
-           return false
+            return false
         }
     }
     
@@ -39,7 +39,9 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
         citySearch.endEditing(true)
         if let cityName = citySearch.text{
             
-            newWeatherManager.addWeatherCity(cityName: cityName)
+            climaBrain.addWeatherCity(cityName: cityName)
+            
+           
             
         }
         else{
@@ -52,18 +54,24 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         citySearch.endEditing(true)
-        print("Search initiated for \(citySearch.text ?? "empty yet")")
         citySearch.resignFirstResponder()
-        
-        
+        sleep(1)
+        cityLabel.text = climaBrain.name
+        temperatureLabel.text = String(climaBrain.temp)
+        conditionImageView.image = UIImage(systemName: "\(climaBrain.weatherPicture)")
+    
         return true
     }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         citySearch.delegate = self
+       
         
     }
-
-
+    
+    
 }
 
