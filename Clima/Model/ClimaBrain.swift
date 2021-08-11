@@ -7,20 +7,21 @@
 
 import UIKit
 
-class ClimaBrain: UIViewController{
+class ClimaBrain{
     var name: String = ""
     var temp: Double = 0.0
     var weatherID: Int = 0
     var weatherPicture: String = ""
     
     
-    var weatherURL =  "hidden"
+    var weatherURL =  "https://api.openweathermap.org/data/2.5/weather?appid=0bd52a13e020af4ed3268f85e454b171&units=metric&&"
     
     func addWeatherCity(cityName: String){
         
         
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        var urlString = "\(weatherURL)&q=\(cityName)"
         print("\(weatherURL)&q=\(cityName)")
+        urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         performRequest(urlString: urlString)
         
     }

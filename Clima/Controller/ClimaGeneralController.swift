@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClimaGeneralController:  ClimaBrain, UITextFieldDelegate {
+class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     
     var climaBrain = ClimaBrain()
     @IBOutlet weak var citySearch: UITextField!
@@ -57,7 +57,7 @@ class ClimaGeneralController:  ClimaBrain, UITextFieldDelegate {
         citySearch.resignFirstResponder()
         sleep(1)
         cityLabel.text = climaBrain.name
-        temperatureLabel.text = String(climaBrain.temp)
+        temperatureLabel.text = "\(String(climaBrain.temp))°C "
         conditionImageView.image = UIImage(systemName: "\(climaBrain.weatherPicture)")
     
         return true
