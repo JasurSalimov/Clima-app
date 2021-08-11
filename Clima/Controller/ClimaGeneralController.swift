@@ -9,12 +9,12 @@ import UIKit
 
 class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     
-    
+    var newWeatherManager = ClimaBrain()
     @IBOutlet weak var citySearch: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-    var goTwice = 0
+    var goTwice = 0  
     @IBAction func searchInitiated(_ sender: UIButton) {
         citySearch.endEditing(true)
         print("Search initiated for \(citySearch.text ?? "empty yet")")
@@ -36,8 +36,17 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        citySearch.text = ""
         citySearch.endEditing(true)
+        if let cityName = citySearch.text{
+            
+            newWeatherManager.addWeatherCity(cityName: cityName)
+            
+        }
+        else{
+            
+        }
+        
+        citySearch.text = ""
     }
     
     

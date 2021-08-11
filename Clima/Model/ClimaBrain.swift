@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+struct ClimaBrain{
+    
+     var weatherURL = 
+    
+    func addWeatherCity(cityName: String){
+        
+        
+        let urlString = "\(weatherURL)&q=\(cityName)"
+        print(urlString)
+    }
+    
+    
+    
+    
+    
+}
