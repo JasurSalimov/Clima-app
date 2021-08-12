@@ -107,27 +107,27 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="93" translatesAutoresizingMaskIntoConstraints="NO" id="J2q-QM-JKr">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-85" translatesAutoresizingMaskIntoConstraints="NO" id="J2q-QM-JKr">
                                                         <rect key="frame" x="0.0" y="102.5" width="414" height="102"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIg-XY-HiC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="102"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5uP-Gz-0Wg"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="aO3-yl-hVd"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Tashkent " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-Ub-gPF">
-                                                                <rect key="frame" x="193" y="0.0" width="221" height="102"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="San Francisco" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-Ub-gPF">
+                                                                <rect key="frame" x="15" y="0.0" width="399" height="102"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                                 <color key="textColor" name="Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="Ue3-Ub-gPF" firstAttribute="leading" secondItem="pIg-XY-HiC" secondAttribute="trailing" constant="93" id="54s-fb-1Lf"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ue3-Ub-gPF" secondAttribute="bottom" id="WEr-av-kZD"/>
                                                             <constraint firstAttribute="trailing" secondItem="Ue3-Ub-gPF" secondAttribute="trailing" id="a4H-iq-ggL"/>
                                                             <constraint firstItem="Ue3-Ub-gPF" firstAttribute="top" secondItem="J2q-QM-JKr" secondAttribute="top" id="lFA-dS-Pgo"/>

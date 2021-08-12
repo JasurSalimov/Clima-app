@@ -57,7 +57,6 @@ struct WeatherBrain{
             let weatherModel = WeatherModel(n: decodedData.name, t: decodedData.main.temp, wCI: decodedData.weather[0].id)
             return weatherModel
         }catch{
-            self.delegate?.didFailWithError(error: Error.self as! Error)
             
             print("error")
             return nil
@@ -69,7 +68,7 @@ struct WeatherBrain{
         print(longitude)
         self.weatherURL =  "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=0bd52a13e020af4ed3268f85e454b171&units=metric&&"
         print(weatherURL)
-        var urlString = weatherURL
+        let urlString = weatherURL
         performRequest(with: urlString)
     }
     

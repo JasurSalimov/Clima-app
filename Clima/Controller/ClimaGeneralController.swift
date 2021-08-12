@@ -21,13 +21,14 @@ class ClimaGeneralController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cityLabel.text = ("\(cityLabel.text!) \t")
         citySearch.delegate = self
         climaBrain.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
-  
+    
     
 }
 //MARK: - UITextFieldDelegate
@@ -65,7 +66,7 @@ extension ClimaGeneralController: WeatherBrainDelegate{
         sleep(1)
         
         DispatchQueue.main.async{
-            self.cityLabel.text = weather.name
+            self.cityLabel.text = ("\(weather.name) \t")
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: "\(weather.weatherCondition)")
         }
@@ -74,7 +75,6 @@ extension ClimaGeneralController: WeatherBrainDelegate{
         
     }
     func didFailWithError(error: Error){
-        
         print(error)
     }
 }
@@ -84,9 +84,9 @@ extension ClimaGeneralController: WeatherBrainDelegate{
 extension ClimaGeneralController: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager,
-                                  didUpdateLocations locations: [CLLocation]){
+                         didUpdateLocations locations: [CLLocation]){
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
         climaBrain.initialWeatherData(latitude: locValue.latitude, longitude: locValue.longitude)
     }
     func locationManager(_ manager: CLLocationManager,
