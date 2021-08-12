@@ -43,6 +43,9 @@
                                                                         <state key="normal">
                                                                             <imageReference key="image" image="location.circle.fill" catalog="system" symbolScale="large"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrg-py-e4g"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEW-6K-tbr">
                                                                         <rect key="frame" x="60" y="0.0" width="294" height="51"/>
@@ -58,6 +61,7 @@
                                                                             <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
+                                                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B75-EZ-WXq"/>
                                                                             <action selector="searchInitiated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPp-9g-4OB"/>
                                                                         </connections>
                                                                     </button>
@@ -114,7 +118,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="102"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5uP-Gz-0Wg"/>
-                                                                    <constraint firstAttribute="width" constant="100" id="aO3-yl-hVd"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="aO3-yl-hVd"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>

@@ -18,12 +18,21 @@ struct WeatherBrain{
     var delegate: ClimaGeneralController?
     
     mutating func addWeatherCity(cityName: String){
+        print("hello")
         self.weatherURL =  "https://api.openweathermap.org/data/2.5/weather?appid=0bd52a13e020af4ed3268f85e454b171&units=metric&&"
         var urlString = "\(weatherURL)&q=\(cityName)"
         print("\(weatherURL)&q=\(cityName)")
         urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         performRequest(with: urlString)
         
+    }
+    
+    mutating func searchInitiated(cityName: String){
+        let weatherURL =  "https://api.openweathermap.org/data/2.5/weather?appid=0bd52a13e020af4ed3268f85e454b171&units=metric&&"
+        var urlString = "\(weatherURL)&q=\(cityName)"
+        print("\(weatherURL)&q=\(cityName)")
+        urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        performRequest(with: urlString)
     }
     func performRequest(with urlString: String){
         

@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class ClimaGeneralController: UIViewController {
+class ClimaGeneralController: UIViewController{
     let locationManager = CLLocationManager()
     var climaBrain = WeatherBrain()
     @IBOutlet weak var citySearch: UITextField!
@@ -16,8 +16,6 @@ class ClimaGeneralController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     var goTwice = 0
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +26,23 @@ class ClimaGeneralController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
-    
-    
 }
+
 //MARK: - UITextFieldDelegate
 extension ClimaGeneralController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         citySearch.endEditing(true)
         citySearch.resignFirstResponder()
+        
         return true
     }
+    @IBAction func locationButtonPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+        
+    }
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+    }
+  
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if (citySearch.text != ""){
@@ -52,13 +57,16 @@ extension ClimaGeneralController: UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         citySearch.endEditing(true)
-        if let cityName = citySearch.text{
-            climaBrain.addWeatherCity(cityName: cityName)
+        let cityName = citySearch.text
+        if cityName != nil{
+            climaBrain.addWeatherCity(cityName: cityName ?? "Tashkent")
         }
         else{
+            
         }
         citySearch.text = ""
     }
+    
 }
 //MARK: - WeatherBraingDelegate
 extension ClimaGeneralController: WeatherBrainDelegate{
@@ -85,9 +93,16 @@ extension ClimaGeneralController: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]){
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        climaBrain.initialWeatherData(latitude: locValue.latitude, longitude: locValue.longitude)
+        if let location = locations.last{
+            locationManager.stopUpdatingLocation()
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            climaBrain.initialWeatherData(latitude: lat, longitude: lon)
+        }
+        
+        
+        
+        
     }
     func locationManager(_ manager: CLLocationManager,
                          didFailWithError error: Error){
@@ -96,3 +111,4 @@ extension ClimaGeneralController: CLLocationManagerDelegate{
     
     
 }
+
