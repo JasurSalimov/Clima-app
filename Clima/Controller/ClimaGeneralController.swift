@@ -9,7 +9,7 @@ import UIKit
 
 class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     
-    var climaBrain = ClimaBrain()
+    var climaBrain = WeatherBrain()
     @IBOutlet weak var citySearch: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -51,15 +51,22 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
         citySearch.text = ""
     }
     
+    func didUpdateWeather(weather: WeatherModel){
+        sleep(1)
+        print(weather.temperature)
+        print(weather.name)
+        print(weather.weatherCondition)
+        //cityLabel.text = weather.name
+       // temperatureLabel.text = weather.temperatureString
+        //conditionImageView.image = UIImage(systemName: "\(weather.weatherCondition)")
+        
+        
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         citySearch.endEditing(true)
         citySearch.resignFirstResponder()
-        sleep(1)
-        cityLabel.text = climaBrain.name
-        temperatureLabel.text = "\(String(climaBrain.temp))°C "
-        conditionImageView.image = UIImage(systemName: "\(climaBrain.weatherPicture)")
-    
+       
         return true
     }
     
@@ -68,6 +75,7 @@ class ClimaGeneralController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         citySearch.delegate = self
+        climaBrain.delegate = self
        
         
     }

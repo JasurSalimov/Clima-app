@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DA84E4826C3EA2600C9B662 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA84E4726C3EA2600C9B662 /* WeatherData.swift */; };
-		1DB7F2F126C27F69003D377A /* ClimaBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7F2F026C27F69003D377A /* ClimaBrain.swift */; };
+		1DB3C64626C5036F00F97A76 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB3C64526C5036F00F97A76 /* WeatherModel.swift */; };
+		1DB7F2F126C27F69003D377A /* WeatherBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7F2F026C27F69003D377A /* WeatherBrain.swift */; };
 		1DF0816F26C1BB8500166F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0816E26C1BB8500166F58 /* AppDelegate.swift */; };
 		1DF0817126C1BB8500166F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0817026C1BB8500166F58 /* SceneDelegate.swift */; };
 		1DF0817326C1BB8500166F58 /* ClimaGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF0817226C1BB8500166F58 /* ClimaGeneralController.swift */; };
@@ -19,7 +20,8 @@
 
 /* Begin PBXFileReference section */
 		1DA84E4726C3EA2600C9B662 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		1DB7F2F026C27F69003D377A /* ClimaBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaBrain.swift; sourceTree = "<group>"; };
+		1DB3C64526C5036F00F97A76 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		1DB7F2F026C27F69003D377A /* WeatherBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBrain.swift; sourceTree = "<group>"; };
 		1DF0816B26C1BB8500166F58 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF0816E26C1BB8500166F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF0817026C1BB8500166F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +46,8 @@
 		1DB7F2ED26C27F16003D377A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DB7F2F026C27F69003D377A /* ClimaBrain.swift */,
+				1DB7F2F026C27F69003D377A /* WeatherBrain.swift */,
+				1DB3C64526C5036F00F97A76 /* WeatherModel.swift */,
 				1DA84E4726C3EA2600C9B662 /* WeatherData.swift */,
 			);
 			path = Model;
@@ -169,8 +172,9 @@
 			files = (
 				1DF0817326C1BB8500166F58 /* ClimaGeneralController.swift in Sources */,
 				1DA84E4826C3EA2600C9B662 /* WeatherData.swift in Sources */,
-				1DB7F2F126C27F69003D377A /* ClimaBrain.swift in Sources */,
+				1DB7F2F126C27F69003D377A /* WeatherBrain.swift in Sources */,
 				1DF0816F26C1BB8500166F58 /* AppDelegate.swift in Sources */,
+				1DB3C64626C5036F00F97A76 /* WeatherModel.swift in Sources */,
 				1DF0817126C1BB8500166F58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
