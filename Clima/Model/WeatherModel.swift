@@ -17,6 +17,7 @@ struct WeatherModel{
         self.temperature = t
         self.name = n
         self.weatherConditionId = wCI
+        tempToString()
     }
     
     mutating func tempToString(){
